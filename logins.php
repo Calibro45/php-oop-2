@@ -8,8 +8,8 @@
 require_once __DIR__ . '/utenti.php';
 class Logins extends Utenti {
 
-    public $email;
-    public $password;
+    private $email;
+    private $password;
 
     public function __construct(string $nome, string $cognome, string $_email, string $_password) {
 
@@ -43,4 +43,5 @@ class Logins extends Utenti {
             $this -> registrazione = true;
         }
     }
+
 };
