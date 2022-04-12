@@ -10,12 +10,36 @@ Il pagamento avviene con la carta di credito, che non deve essere scaduta. */
 // prezzo
 // sconto
 
+class Prodotti {
+
+    public $nomeProdotto;
+    public $categoria;
+    public $prezzo;
+    private $sconto;
+
+    public function __construct(string $prodotto, string $_categoria, int $_prezzo) {
+        $this -> nomeProdotto = $prodotto;
+        $this -> categoria = $_categoria;
+        $this -> prezzo = $_prezzo;
+        $this -> setSconto();
+    }
+
+    public function setSconto() {
+        $this -> sconto = 0;
+    }
+
+};
+
+$prodotto1 = new Prodotti('crocchette', 'mangime', 20,00);
+var_dump($prodotto1);
+
 // utenti:
 // nome
 // cognome
 // indirizzo
 // metodi pagamenti
 // registrazione si/no
+// sconto
 
 // login :
 // user-name
