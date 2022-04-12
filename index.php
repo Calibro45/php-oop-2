@@ -15,7 +15,7 @@ var_dump($prodotto1);
 $utente1 = new Utenti('nico', 'il sardo');
 var_dump($utente1);
 
-$login1 = new Logins('nico', 'il sardo', 'ajeje', 'ajeje@hotmail.it', 'brazorf91');
+$login1 = new Logins('nico', 'il sardo', 'ajeje@gmail.com', 'brazorf91');
 var_dump($login1);
 
 // carrello :
