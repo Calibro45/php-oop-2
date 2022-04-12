@@ -11,6 +11,7 @@ class Prodotti {
     public $nomeProdotto;
     public $categoria;
     public $prezzo;
+    public $quantita = 1;
     private $sconto;
 
     public function __construct(string $prodotto, string $_categoria, int $_prezzo) {

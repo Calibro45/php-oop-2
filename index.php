@@ -31,11 +31,6 @@ var_dump($login1);
 $pagamento1 = new Pagamenti(1234567891011, '05/26', 123, 'visa');
 var_dump($pagamento1);
 
-// carrello :
-// prodotto -> collegato a prodotti
-// quantità
-// totale
-
 // ordini :
 // n. ordine
 // prodotti 
