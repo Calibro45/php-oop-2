@@ -11,9 +11,9 @@ class Logins extends Utenti {
     private $email;
     private $password;
 
-    public function __construct(string $nome, string $cognome, string $_email, string $_password) {
+    public function __construct(string $nome, string $cognome, string $indirizzo, string $_email, string $_password) {
 
-        parent::__construct($nome, $cognome);
+        parent::__construct($nome, $cognome, $indirizzo);
         $this -> setEmail($_email);
         $this -> setPassword($_password);
         $this -> setSconto();

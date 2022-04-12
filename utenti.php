@@ -18,9 +18,10 @@ class Utenti {
     protected $registrazione = false;
     protected $sconto;
 
-    public function __construct(string $_nome, string $_cognome) {
+    public function __construct(string $_nome, string $_cognome, string $_indirizzo) {
         $this -> nome = $_nome;
         $this -> cognome = $_cognome;
+        $this -> indirizzo = $_indirizzo;
 
     }
 

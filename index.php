@@ -9,17 +9,24 @@ require_once __DIR__. '/utenti.php';
 require_once __DIR__. '/logins.php';
 require_once __DIR__. '/pagamenti.php';
 
+// podotti
 
 $prodotto1 = new Prodotti('crocchette', 'mangime', 20,00);
 var_dump($prodotto1);
 
-$utente1 = new Utenti('nico', 'il sardo');
-$utente1 -> addPagamento(1234567891011, '05/26', 123, 'visa');
+// utenti 
+
+$utente1 = new Utenti('nico', 'il sardo', 'Via patagarru 69');
+$utente1 -> addPagamento(1234567891011, '04/26', 123, 'visa');
 $utente1 -> addPagamento(1234567891011, '05/26', 123, 'mastercard');
 var_dump($utente1);
 
-$login1 = new Logins('nico', 'il sardo', 'ajeje@gmail.com', 'brazorf91');
+// logins 
+
+$login1 = new Logins('nico', 'il sardo', 'Via patagarru 69', 'ajeje@gmail.com', 'brazorf91');
 var_dump($login1);
+
+// pagamenti 
 
 $pagamento1 = new Pagamenti(1234567891011, '05/26', 123, 'visa');
 var_dump($pagamento1);
