@@ -25,7 +25,7 @@ var_dump($utente1);
 // logins 
 
 $login1 = new Logins('nico', 'il sardo', 'Via patagarru 69', 'ajeje@gmail.com', 'brazorf91');
-var_dump($login1);
+//var_dump($login1);
 
 // pagamenti 
 
@@ -34,12 +34,20 @@ $pagamento1 = new Pagamenti(1234567891011, '05/26', 123, 'visa');
 
 // carrello
 
-$carrello1 = new Carrello();
-$carrello1 -> addProdotto('cuccia', 'accessori', 50, 2);
-$carrello1 -> addProdotto('crocchette', 'mangime', 20, 1);
-$carrello1 -> addProdotto('palla', 'giochi', 10, 5);
+$carrello1 = new Carrello('nico', 'il sardo', 'Via patagarru 69', 'ajeje@gmail.com', '');
+$carrello1 -> addProdotto('cuccia', 'accessori', 50.00, 2);
+$carrello1 -> addProdotto('crocchette', 'mangime', 20.00, 1);
+$carrello1 -> addProdotto('palla', 'giochi', 10.00, 5);
 //$carrello1 -> removeProdotto(1);
 var_dump($carrello1);
+
+$carrello2 = new Carrello('nico', 'il sardo', 'Via patagarru 69', 'ajeje@gmail.com', 'brazorf91');
+$carrello2 -> addProdotto('spazzola', 'accessori', 10.00, 2);
+$carrello2 -> addProdotto('crocchette', 'mangime', 20.00, 1);
+$carrello2 -> addProdotto('pettorina', 'accessori', 25.00, 3);
+$carrello2 -> removeProdotto(1);
+var_dump($carrello2);
+
 
 
 

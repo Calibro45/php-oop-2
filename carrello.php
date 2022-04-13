@@ -7,12 +7,16 @@
 // totale carrello
 
 require_once __DIR__. '/prodotti.php';
+require_once __DIR__. '/logins.php';
 
-class Carrello {
+class Carrello extends Logins {
 
     private $articoli = [];
     private $totaleCarrello;
 
+    public function __construct($nome, $cognome, $indirizzo, $email, $password) {
+        parent::__construct($nome, $cognome, $indirizzo, $email, $password);
+    }
 
     public function addProdotto($nome, $categoria, $prezzo, $quantita) {
         array_push($this -> articoli, new Prodotti($nome, $categoria, $prezzo, $quantita));
@@ -21,6 +25,7 @@ class Carrello {
 
     public function removeProdotto(int $index) {
         array_splice($this -> articoli, $index, $index);
+        $this -> setTotale();
     }
 
     public function setTotale() {
@@ -37,7 +42,20 @@ class Carrello {
             }
         }
 
-        $this -> totaleCarrello = $totale;
+        $this -> setTotSconto($totale, $this -> registrazione, $this -> sconto);
+
+    }
+
+    public function setTotSconto($tot, $registrazione, $sconto) {
+
+        if ($registrazione == true) {
+            $scontoPerc = $sconto / 100;
+            $totScontato = $tot * $scontoPerc;
+            $subTot = $tot - $totScontato;
+            $this -> totaleCarrello = number_format($subTot,2);
+        } else {
+            $this -> totaleCarrello = number_format($tot, 2);
+        }
     }
     
 }

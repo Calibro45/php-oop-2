@@ -33,8 +33,16 @@ class Logins extends Utenti {
     }
 
     public function setLogin() {
-        if (isset($this -> email) && isset($this -> password)) {
+        $email = $this -> email;
+        $password = $this -> password;
+
+        if (isset($email) && $email != null && 
+            isset($password) && $password != null) {
+
             $this -> registrazione = true;
+            
+        } else {
+            $this -> registrazione = false;
         }
     }
 
@@ -43,6 +51,5 @@ class Logins extends Utenti {
             $this -> sconto = 20;
         }
     }
-
 
 };
