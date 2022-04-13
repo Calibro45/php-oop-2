@@ -8,6 +8,7 @@ require_once __DIR__. '/prodotti.php';
 require_once __DIR__. '/utenti.php';
 require_once __DIR__. '/logins.php';
 require_once __DIR__. '/pagamenti.php';
+require_once __DIR__. '/carrello.php';
 
 // podotti
 
@@ -30,6 +31,12 @@ var_dump($login1);
 
 $pagamento1 = new Pagamenti(1234567891011, '05/26', 123, 'visa');
 var_dump($pagamento1);
+
+// carrello
+
+$carrello1 = new Carrello('crocchette', 'mangime', 20, 1);
+$carrello1 -> addProdotto('cuccia', 'accessori', 50, 2);
+var_dump($carrello1);
 
 // ordini :
 // n. ordine
