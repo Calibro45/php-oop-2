@@ -32,16 +32,17 @@ class Logins extends Utenti {
         }
     }
 
-    public function setSconto() {
-        if (isset($this -> email) && isset($this -> password)) {
-            $this -> sconto = 20;
-        }
-    }
-
     public function setLogin() {
         if (isset($this -> email) && isset($this -> password)) {
             $this -> registrazione = true;
         }
     }
+
+    public function setSconto() {
+        if ($this -> registrazione = true) {
+            $this -> sconto = 20;
+        }
+    }
+
 
 };

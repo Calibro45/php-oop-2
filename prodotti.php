@@ -12,9 +12,9 @@ class Prodotti {
     public $categoria;
     public $prezzo;
     public $quantita;
-    private $sconto;
+    protected $sconto;
 
-    public function __construct(string $prodotto, string $_categoria, int $_prezzo, int $_quantita) {
+    public function __construct(string $prodotto, string $_categoria, int $_prezzo, $_quantita) {
         $this -> nomeProdotto = $prodotto;
         $this -> categoria = $_categoria;
         $this -> prezzo = $_prezzo;
@@ -27,10 +27,7 @@ class Prodotti {
     }
 
     public function setQuantita(int $_quantita) {
-        if ($_quantita != 1) {
-            $this -> quantita = $_quantita;
-        } else 
-        $this -> quantita = 1;
+        $this -> quantita = $_quantita;
     }
 
 };

@@ -13,7 +13,7 @@ require_once __DIR__. '/carrello.php';
 // podotti
 
 $prodotto1 = new Prodotti('crocchette', 'mangime', 20,00);
-var_dump($prodotto1);
+//var_dump($prodotto1);
 
 // utenti 
 
@@ -30,13 +30,18 @@ var_dump($login1);
 // pagamenti 
 
 $pagamento1 = new Pagamenti(1234567891011, '05/26', 123, 'visa');
-var_dump($pagamento1);
+//var_dump($pagamento1);
 
 // carrello
 
-$carrello1 = new Carrello('crocchette', 'mangime', 20, 1);
+$carrello1 = new Carrello();
 $carrello1 -> addProdotto('cuccia', 'accessori', 50, 2);
+$carrello1 -> addProdotto('crocchette', 'mangime', 20, 1);
+$carrello1 -> addProdotto('palla', 'giochi', 10, 5);
+//$carrello1 -> removeProdotto(1);
 var_dump($carrello1);
+
+
 
 // ordini :
 // n. ordine
