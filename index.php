@@ -9,6 +9,7 @@ require_once __DIR__. '/utenti.php';
 require_once __DIR__. '/logins.php';
 require_once __DIR__. '/pagamenti.php';
 require_once __DIR__. '/carrello.php';
+require_once __DIR__. '/ordini.php';
 
 // podotti
 
@@ -39,6 +40,7 @@ $carrello1 -> addProdotto('cuccia', 'accessori', 50.00, 2);
 $carrello1 -> addProdotto('crocchette', 'mangime', 20.00, 1);
 $carrello1 -> addProdotto('palla', 'giochi', 10.00, 5);
 //$carrello1 -> removeProdotto(1);
+$carrello1 -> acquista();
 var_dump($carrello1);
 
 $carrello2 = new Carrello('nico', 'il sardo', 'Via patagarru 69', 'ajeje@gmail.com', 'brazorf91');
@@ -46,15 +48,10 @@ $carrello2 -> addProdotto('spazzola', 'accessori', 10.00, 2);
 $carrello2 -> addProdotto('crocchette', 'mangime', 20.00, 1);
 $carrello2 -> addProdotto('pettorina', 'accessori', 25.00, 3);
 $carrello2 -> removeProdotto(1);
+$carrello2 -> acquista();
 var_dump($carrello2);
 
-
-
-
-// ordini :
-// n. ordine
-// prodotti 
-// data consegna
-// totale ordine
-
+$ordine = new Ordini();
+$ordine -> nuvoOrdine();
+var_dump($ordine);
 

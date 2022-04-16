@@ -8,11 +8,13 @@
 
 require_once __DIR__. '/prodotti.php';
 require_once __DIR__. '/logins.php';
+require_once __DIR__. '/ordini.php';
 
 class Carrello extends Logins {
 
     private $articoli = [];
-    private $totaleCarrello;
+    private $totale;
+    protected $acquisto;
 
     public function __construct($nome, $cognome, $indirizzo, $email, $password) {
         parent::__construct($nome, $cognome, $indirizzo, $email, $password);
@@ -37,6 +39,7 @@ class Carrello extends Logins {
 
             if ($quantita > 1) {
                 $totale += $prezzo * $quantita; 
+                
             } else {
                 $totale += $prezzo;
             }
@@ -52,10 +55,15 @@ class Carrello extends Logins {
             $scontoPerc = $sconto / 100;
             $totScontato = $tot * $scontoPerc;
             $subTot = $tot - $totScontato;
-            $this -> totaleCarrello = number_format($subTot,2);
+            $this -> totale = number_format($subTot,2);
+
         } else {
-            $this -> totaleCarrello = number_format($tot, 2);
+            $this -> totale = number_format($tot, 2);
         }
+    }
+
+    public function acquista() {
+        $this -> acquisto = new Ordini();
     }
     
 }
